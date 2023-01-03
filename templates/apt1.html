@@ -1,0 +1,60 @@
+
+
+{% extends "apt_base.html" %}
+{% block content %}
+<progress max="600" value="0" data-label></progress>
+
+<br><br><br>
+
+<form action="/aptq_1" method="post" id="stream">
+<div style="margin:0 auto" align=center>
+<font  face="Aspergit" color="black">
+<p><h1><b>1)	Which stream do you plan to pursue?</b> </p></h1>
+</font>
+<font color='white' face="Aspergit">
+<label class="container"><br>Engineering
+  <input type="checkbox" id="stream1" name="stream"  value="engineering">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"><br>Medical
+  <input type="checkbox" id="stream2" name="stream"  value="medical">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"><br>Commerce
+  <input type="checkbox" id="stream3" name="stream"  value="commerce">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"><br>Arts
+  <input type="checkbox" id="stream4" name="stream"  value="arts">
+  <span class="checkmark"></span>
+</label>
+<br>
+</font>
+
+<font face='Aspergit'>
+
+<p align='right'><font face='Aspergit'><b><input type="submit" value= "Next Question" id='nq' style= "color:black;
+    font: 1em/1.25em Aspergit, Helvetica, sans-serif; font-weight: bold;"></b></font></input></p>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

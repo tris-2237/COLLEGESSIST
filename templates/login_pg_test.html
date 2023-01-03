@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>Login Page</title>
+<head>
+<style>
+
+
+body {
+  padding: 70px 0;
+  text-align: center;
+}
+
+
+.box {
+  background-color: white;
+  width: 350px;
+  border: 5px solid black;
+  padding: 70px;
+  text-align: center;
+  margin: 20px;
+}
+
+
+</style>
+</head>
+
+
+<body background="{{url_for('static',filename='bg1.jpg')}}">
+
+
+
+
+<div style="margin:0 auto" align=center>
+<div class=box>
+
+<h3 face="Times New Roman">
+<br><br>
+<b>Sign In HERE !</b></h3>
+ 
+<form action="/submit" method="post"><!---->
+  <label for="username">Username:</label>
+  <input type="text" id="userame" name="username"><br>
+  <label for="password">Password :</label>
+  <input type="text" id="password" name="password"><br><br>
+  <input type="submit" value="Submit">
+  <br><br><br><br>
+</form>
+
+</div>
+</div>
+</body>
+</html>
+
+

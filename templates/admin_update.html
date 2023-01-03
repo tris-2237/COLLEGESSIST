@@ -1,0 +1,142 @@
+<html>
+<head>
+<title>Admin-Update</title>
+<style>
+
+
+
+<!--.center {
+  padding: 70px 0;
+  border: 3px solid white;
+  text-align: center;
+}-->
+
+
+
+body {
+  padding: 70px 0;
+  text-align: center;
+}
+
+
+
+
+
+
+
+.box {
+  background-color: white;
+  width: 600px;
+  border: 5px solid black;
+  padding: 30px;
+  text-align: center;
+  margin: 5px;
+}
+</style>
+</head>
+
+
+
+
+
+<body background="{{url_for('static',filename='bg_admin.jpg')}}">
+
+
+<div style="margin:0 auto" align=center>
+<div class="box">
+
+<div align=left>
+<a href="/homepg.html">
+<img border="0" alt="adminback1" src="{{url_for('static',filename='back.png')}}" width="60" height="50">
+</a>
+</div>
+
+
+<h1>ADMIN</h1>
+<img src="{{url_for('static',filename='logo.jpg')}}" height=100 width=100>
+
+<h2 face="Times New Roman">
+<b>COLLEGESSIST</b></h2>
+<br> 
+<h2>Enter Details of College to be Updated</h2><br>
+{% with messages=get_flashed_messages() %}
+    {% if messages %}
+      {% for msg in messages %}
+       <center><h2 face="Times New Roman"> <font color="red">{{msg}}</font></center></h2>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+<form action="/admin_update" method="post">
+  <label for="colname"><h3>Name of College</h3></label><!--method,action as attributes-->
+  <input type="text" id="colname" name="col_name" size=45><br><br>
+   <label for="stream"><h3>*Streams Offered</h3></label>
+   <input type="text" id="stream" name="new_stream" size=25><br><br>
+ 
+   <label for="country"><h3>Location/Country</h3></label> 
+    <select name="new_country" id="country" style="width: 175px">
+  <option value="india">India</option>
+  <option value="usa">USA</option>
+  <option value="germany">Germany</option>
+  </select>
+ <br><br>
+   
+   
+  <label for="size"><h3>Size</h3></label>
+  <select name="new_size" id="size" style="width: 175px">
+  <option value="big">Big</option>
+  <option value="small">Small</option>
+ </select>
+ <br><br>
+  
+  
+  <label for="hostel"><h3>*Accommodation/Hostel Facilties</h3></label>
+  <input type="text" id="hostel" name="new_hostel" size=25><br><br>
+  
+  <label for="classmates"><h3>Admits/Gender</h3></label>
+  <select name="new_cmates" id="classmates" style="width: 175px">
+  <option value="male">Male</option>
+  <option value="female">Female</option>
+  <option value="both">Co-Ed</option>
+  </select>
+ <br><br>
+   
+  
+
+  <label for="fee"><h3>*Entrance Through</h3></label>
+  <input type="text" id="fee" name="new_fee" size=25><br><br>
+  
+ 
+  
+
+  
+<!--<label for="line1"><h3>First Line of College Information</h3></label>
+  <input type="text" id="line1" name=" " size=45><br><br>
+  
+   <label for="line2"><h3>Second Line of College Information</h3></label>
+  <input type="text" id="line2" name=" " size=45><br><br>
+  
+  <label for="line3"><h3>Courses Offered</h3></label>
+  <input type="text" id="line3" name=" " size=45><br><br>
+  
+   <label for="line4"><h3>Other Facilities</h3></label>
+  <input type="text" id="line4" name=" " size=45><br><br><br>-->
+  
+  <input type="submit" value="Update">
+  
+  
+</form>
+
+<div align=left>
+<font color='red'>*</font>
+<font size=3>Enter multiple values in this format-- value1;value2;etc </font></p>
+</div>
+
+
+
+</div>
+</div>
+
+
+</body>
+</html>
+

@@ -1,0 +1,335 @@
+<html>
+<head><title>Search By Filter</title>
+<style>
+
+<!--body {
+  margin: 5px;
+  padding: 0;
+  box-sizing: border-box;
+}-->
+
+#main {
+  background-color: #ffc14d ;
+  width: 100%;
+  height: 100px;
+  border: 2px solid black;
+  display: flex;
+  align-items: flex-start;
+
+}
+
+
+#filterbox    {
+     background-color:  ;
+     
+     border-radius: 30px;
+     display: inline;
+     width: 35%;
+     min-height: 60vh;
+     margin: 1px;
+     border: 2px solid white;
+     padding: 20px;
+     box-sizing: border-box;
+     position: fixed;
+     top: 220;
+     right: 460;
+
+
+     }
+     
+#nq {
+
+    font-size: 20px;
+    color: black;
+    background: #ffc14d;
+    border: 0px solid ;
+    border-radius: 30px;
+
+    height: 50px;
+    width: 70px;
+ }
+
+
+#name {
+  align-self: center;
+}
+
+#name1 {
+  align-self: top;
+}
+
+select {
+  border: 0 none;
+  color: #000000;
+  background: transparent;
+  font-size: 20px;
+ 
+  
+  font-weight: ;
+  padding: 2px 10px;
+  width: 378px;
+  *width: 350px;
+  background: #ffc14d;
+}
+
+#mainselection {
+  overflow: hidden;
+  width: 350px;
+  -moz-border-radius: 9px 9px 9px 9px;
+  -webkit-border-radius: 9px 9px 9px 9px;
+  border-radius: 9px 9px 9px 9px;
+  <!--box-shadow: 1px 1px 11px #330033;-->
+  background: url("arrow.gif") no-repeat scroll 319px 5px ;
+   color:black;font: 1em/1.25em Aspergit, Helvetica, sans-serif; font-weight: bold;
+}
+
+
+
+ul {
+  width: 100%;
+  list-style-type: none;
+  border: 2px solid black;
+  margin: 0;
+  padding: 0px;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+<!--li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}-->
+
+
+
+
+
+li a, .dropbtn {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn :hover:not(.active) {
+  background-color: #555;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #ffc14d;}
+
+.dropdown-contentadmin a:hover {background-color: #ff3333;}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+li a.active {
+  background-color: #ffc14d;
+  color: black;
+  border: 1px solid black;
+
+}
+li a.admin {
+  background-color: red;
+  color: black;
+
+}
+
+li a.stick {
+  <!--background-color: #ffc14d;-->
+  color: white;
+  
+}
+
+#middle {
+  text-align: center;
+  margin: 15px;
+  color: white;
+
+}
+
+
+
+
+
+
+
+
+</style>
+</head>
+
+
+<BODY text='white' background="{{url_for('static',filename='filter_bg.jpg')}}" style=" background-size: 1450px 1080px;"><!-- bgcolor='black'-->
+<div id='main'>
+<nobr><img src="{{url_for('static',filename='logo.jpg')}}" height=100 width=100><!--{{url_for('static',filename='logo1_csc.jpg')}}-->&nbsp&nbsp
+<div id='name'>
+<font color ="#000000" size =7 face ="Impact"><b>COLLEGESSIST</b></FONT>
+</nobr>
+<!---<h3><i>~Colleges You Love 3000</i></h3>-->
+</div>
+</div>
+</div>
+
+
+
+<ul>
+  <li><a href="/homepg.html">Home</a></li>
+  <li><a  href="/apt.html">Aptitude</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn active" >Colleges</a>
+    <div class="dropdown-content">
+      <a href="all_colleges.html">All Colleges</a>
+      <a href="/filter_search" >Search By Filter</a>
+    </div>
+  </li>
+  <li><a href="updates">Updates</a></li>
+  <li><a href="/help">Help</a></li>
+  <li><a href="/about">About Us</a></li>
+  <li class="admin dropdown" style="visibility: {{v}};"><a href="javascript:void(0)" class="admin dropbtn" style="visibility: {{v}};">Admin</a>
+   <div class="dropdown-content dropdown-contentadmin">
+      <a href="admin_add">Add a College</a>
+      <a href="/admin_update">Update a College</a>
+       <a href="/admin_delete">Delete a College</a>
+
+    </div>
+    </li>
+  <li style="float:right"><a class="stick" href="loginpagenew.html">Sign Out</a></li>
+  <li style="float:right" id='middle'>Welcome,{{username_1}}      </li>
+  
+  
+</ul>
+
+<!--COLLEGE INFO-APTITUDE BOX-->
+<br>
+<div id='filterbox'>
+<div style="margin:0 auto" align=center>
+<form action='/check_filter' method="post">
+<font  face="Aspergit">
+
+<p><h1>  Stream </p></h1>
+<div id="mainselection">
+  <select name='stream'>
+    <option value='engineering'>Engineering</option>
+    <option value='medical'>Medical</option>
+    <option value='commerce'>Commerce</option>
+    <option value='arts'>Arts</option>
+    
+  </select>
+</div>
+
+<p><h1>  Country </p></h1>
+<div id="mainselection">
+  <select name='country'>
+    <option value='india'>India</option>
+    <option value='usa'>USA</option>
+    <option value='germany'>Germany</option>
+  </select>
+</div>
+
+<p><h1>  Day Scholar</p></h1>
+<div id="mainselection">
+  <select name='hostel'>
+    <option value='none'>Yes</option>
+    <option value='yes'>No</option>
+   
+  </select>
+</div>
+
+<br><br><br>
+
+<p align='right'><font face='Aspergit' size=3><b><input type="submit" value= "Go!" id='nq' style= "color:black;
+    font: 1em/1.25em Aspergit, Helvetica, sans-serif; font-weight: bold;"></b></font></input></p>
+
+
+
+</font>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

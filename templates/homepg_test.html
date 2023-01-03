@@ -1,0 +1,218 @@
+<html>
+<head><title>f1frontpage</title>
+<style>
+
+
+
+
+
+#main {
+  background-color: #ffc14d ;
+  width: 1422px;
+  height: 100px;
+  border: 1px solid black;
+  display: flex;
+  align-items: flex-start;
+
+}
+
+
+.box {
+  background-color: black;
+  width: 350px;
+  color: white;
+  padding: 70px;
+  text-align: center;
+  margin: 5px;
+}
+
+
+
+
+
+
+
+
+#name {
+  align-self: center;
+}
+
+
+
+ul {
+  width: 1422px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn :hover:not(.active) {
+  background-color: #555;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+li a.active {
+  background-color: #ffc14d;
+  color: black;
+
+}
+
+
+li a.stick {
+  <!--background-color: #ffc14d;-->
+  color: white;
+
+}
+
+
+button {
+height: 1000px;
+width: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+
+
+
+
+<body background ="{{url_for('static',filename='bg4.jpg')}}">
+
+<div id='main'>
+<nobr><img src="{{url_for('static',filename='logo.jpg')}}" height=100 width=100>&nbsp&nbsp
+<div id=name>
+<font color ="#000000" size =7 face ="Impact"><b>COLLEGESSIST</b></FONT>
+</nobr>
+<!---<h3><i>~Colleges You Love 3000</i></h3>-->
+</div>
+</div>
+</div>
+
+
+
+<ul>
+  <li><a class='active' href="#home">Home</a></li>
+  <li><a href="aptitude">Aptitude</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Search</a>
+    <div class="dropdown-content">
+      <a href="">All Colleges</a>
+      <a href="">By Filter</a>
+    </div>
+  </li>
+  <li><a href="updates">Updates</a></li>
+  <li><a href="help">Help</a></li>
+  <li><a href="about">About Us</a></li>
+  <li style="float:right"><a class="stick" href="   ">Sign Out</a></li>
+  <li style="float:right"><a class="stick" href="   ">Welcome,       </a></li>
+  
+  
+</ul>
+
+
+<div style="margin:0 auto" align=center>
+<div class="box">
+
+<h2 face="Times New Roman">
+
+<br> 
+<form>
+  <label for="search"><h3>Search for YOUR Dream College Here</h3></label> <!--method,action as attributes-->
+  <div class='button'>
+  <input class='button' type="text" id="search" name="search" placeholder="Search By College Name" height=1500 width=500><br>
+  </div>
+  <input type="submit" value="Search">
+  
+</form>
+
+
+
+</div>
+</div>
+
+
+	
+
+
+</body>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

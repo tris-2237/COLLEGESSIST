@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>Admin-Delete</title>
+<style>
+
+
+
+<!--.center {
+  padding: 70px 0;
+  border: 3px solid white;
+  text-align: center;
+}-->
+
+
+
+body {
+  padding: 70px 0;
+  text-align: center;
+}
+
+
+
+
+
+
+
+.box {
+  background-color: white;
+  width: 600px;
+  border: 5px solid black;
+  padding: 30px;
+  text-align: center;
+  margin: 5px;
+}
+</style>
+</head>
+
+<body background="{{url_for('static',filename='bg_admin.jpg')}}">
+
+<br><Br>
+<div style="margin:0 auto" align=center>
+<div class="box">
+
+<div align=left>
+<a href="/homepg.html">
+<img border="0" alt="adminback1" src="{{url_for('static',filename='back.png')}}" width="60" height="50">
+</a>
+</div>
+
+<h1>ADMIN</h1>
+<img src="{{url_for('static',filename='logo.jpg')}}" height=100 width=100>
+
+<h2 face="Times New Roman">
+<b>COLLEGESSIST</b></h2>
+<br> 
+{% with messages=get_flashed_messages() %}
+    {% if messages %}
+      {% for msg in messages %}
+       <center><h2 face="Times New Roman"> <font color="red">{{msg}}</font></center></h2>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+<form action="/admin_delete" method="post">
+  <label for="colname"><h2>Enter Name of College to be Deleted</h2></label><!--method,action as attributes-->
+  <input type="text" id="colname" name="col_name" size=45><br><br>
+   
+  <input type="submit" value="Delete">
+  
+  
+</form>
+
+
+
+</div>
+</div>
+
+
+</body>
+</html>

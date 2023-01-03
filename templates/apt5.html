@@ -1,0 +1,58 @@
+
+{% extends "apt_base.html" %}
+{% block content %}
+<progress max="600" value="435" ></progress>
+
+<br><br><br>
+
+<form action="/aptq_5" method="post" id="stream">
+<div style="margin:0 auto" align=center>
+<font  face="Aspergit">
+<p><h1>5)	Your choice of Classmates:</p></h1>
+</font>
+
+<!--
+<input type="checkbox" id="classmates1" name="classmates"  value="male" checked>
+<label for="classmates1">Male</label><br>
+<input type="checkbox" id="classmates2" name="classmates"  value="female" checked>
+<label for="classmates2">Female</label><br>
+<input type="checkbox" id="classmates3" name="classmates" value="both" checked>
+<label for="classmates3">Co-Ed</label>
+
+-->
+
+
+<font color='white' face="Aspergit">
+<label class="container"><br>Male
+  <input type="checkbox" id="classmates1" name="classmates"  value="male" >
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"><br>Female
+  <input type="checkbox" id="classmates2" name="classmates"  value="female"  >
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"><br>Co-Ed
+  <input type="checkbox" id="classmates3" name="classmates" value="both" >
+  <span class="checkmark"></span>
+</label>
+<br>
+
+
+</font>
+
+<font face='Aspergit'>
+
+<p align='right'><font face='Aspergit'><b><input type="submit" value= "Next Question" id='nq' style= "color:black;
+    font: 1em/1.25em Aspergit, Helvetica, sans-serif; font-weight: bold;"></b></font></input></p>
+{% endblock %}
+
+<!--108
+216
+325
+435
+540
+600-->

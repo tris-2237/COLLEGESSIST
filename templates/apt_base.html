@@ -1,0 +1,383 @@
+<html>
+<head><title>apt</title>
+<style>
+
+<!--body {
+  margin: 5px;
+  padding: 0;
+  box-sizing: border-box;
+}-->
+
+#main {
+  background-color: #ffc14d ;
+  width: 100%;
+  height: 100px;
+  border: 2px solid black;
+  display: flex;
+  align-items: flex-start;
+
+}
+
+
+#aptbox    {
+     background-color: white ;
+     
+     border-radius: 30px;
+     display: inline;
+     width: 60%;
+/*      height: 77%; */
+    min-height: 60vh;
+    
+     margin: 0px;
+     border: 1px solid white;
+     padding: 15px;
+     box-sizing: border-box;
+     position: fixed;
+     top: 172;/*180 in mac*/
+     
+     right:300;
+
+
+     }
+     
+#nq {
+
+    font-size: 15px;
+    color: black;
+    background: #ffc14d;
+    border: 0px solid ;
+    border-radius: 30px;
+
+    height: 50px;
+    width: 150px;
+ }
+
+
+#name {
+  align-self: center;
+}
+
+#name1 {
+  align-self: top;
+}
+
+
+
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+   appearance: none;
+   width: 100%;
+   height: 10px;
+    <!--position: relative;-->
+   
+   
+
+}
+
+ <!--progress:before {
+  content: attr(data-label);
+  font-size: 0.8em;
+  
+  
+  /*Position text over the progress bar */
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  left: 0;
+  right: 0;
+}-->
+
+
+progress::-webkit-progress-bar {
+      /* background-color: white; */
+        <!--width: 100%;-->
+       }
+progress::-webkit-progress-value{
+        background-color: #ffc14d;
+        /*display: inline-block;
+        height: 100%;*/
+  }
+  
+  
+.border{
+  border: 1px solid black;
+  border-radius: 50% ;
+}
+
+/* The container */
+.container {
+  border-radius: 10px;
+  text-align: center;
+  background-color: #333 ;
+  border: 1px solid;
+  height: 65px;
+  width: 200px;
+  display: inline-block;
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #333;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover  {
+  background-color: #797C78;
+}
+
+
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color:  #ffc14d;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+ul {
+  width: 100%;
+ 
+  list-style-type: none;
+  border: 2px solid black;
+  margin: 0;
+  padding: 0px;
+  overflow: hidden;
+  background-color: #333;
+
+}
+
+li {
+  float: left;
+}
+
+/*!--li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}*/
+
+
+
+
+
+li a, .dropbtn {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn :hover:not(.active) {
+  background-color: #555;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #ffc14d;}
+
+.dropdown-contentadmin a:hover {background-color: #ff3333;}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+li a.active {
+  background-color: #ffc14d;
+  color: black;
+  border: 1px solid black;
+
+}
+
+li a.admin {
+  background-color: red;
+  color: black;
+
+}
+
+li a.stick {
+  <!--background-color: #ffc14d;-->
+  color: white;
+  
+}
+
+#middle {
+  text-align: center;
+  margin: 15px;
+  color: white;
+
+}
+
+
+
+
+
+
+
+
+</style>
+</head>
+
+
+<BODY text='black' background="{{url_for('static',filename='apt_bg2.jpg')}}"><!-- bgcolor='black'-->
+<div id='main'>
+<nobr><img src="{{url_for('static',filename='logo.jpg')}}" height=100 width=100><!--{{url_for('static',filename='logo1_csc.jpg')}}-->&nbsp&nbsp
+<div id='name'>
+<font color ="#000000" size =7 face ="Impact"><b>COLLEGESSIST</b></FONT>
+</nobr>
+<!---<h3><i>~Colleges You Love 3000</i></h3>-->
+</div>
+</div>
+</div>
+
+
+
+<ul>
+  <li><a href="/homepg.html">Home</a></li>
+  <li><a class='active' href="/apt.html">Aptitude</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Colleges</a>
+    <div class="dropdown-content">
+      <a href="/all_colleges.html">All Colleges</a>
+      <a href="/filter_search">Search By Filter</a>
+    </div>
+  </li>
+  <li><a href="updates">Updates</a></li>
+  <li><a href="/help">Help</a></li>
+  <li><a href="/about">About Us</a></li>
+  <li class="admin dropdown" style="visibility: {{v}};"><a href="javascript:void(0)" class="admin dropbtn" style="visibility: {{v}};">Admin</a>
+   <div class="dropdown-content dropdown-contentadmin">
+      <a href="admin_add">Add a College</a>
+      <a href="/admin_update">Update a College</a>
+       <a href="/admin_delete">Delete a College</a>
+
+    </div>
+    </li>
+  <li style="float:right"><a class="stick" href="loginpagenew.html">Sign Out</a></li>
+  <li style="float:right" id='middle'>Welcome,{{username_1}}      </li>
+  
+  
+</ul>
+
+<!--COLLEGE INFO-APTITUDE BOX-->
+<br>
+
+<div id='aptbox'>
+  <!-- <div style="margin:0 auto" align=center>  -->
+
+
+<nobr>
+
+<img class='border' src="{{url_for('static',filename='stream.jpg')}}" height=75 width=75>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+
+<img class='border' src="{{url_for('static',filename='country.jpg')}}"" height=75 width=75>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp
+
+
+<img class='border' src="{{url_for('static',filename='size.jpg')}}" height=75 width=75>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp
+
+
+<img class='border' src="{{url_for('static',filename='hostel.png')}}" height=75 width=75>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+
+<img class='border' src="{{url_for('static',filename='classmates.jpg')}}" height=75 width=75>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+<img class='border' src="{{url_for('static',filename='fee.png')}}" height=75 width=75>
+
+</nobr>
+
+<br><br>
+{% block content %}
+
+{% endblock %}
+</center>
+</h2>
+</div>
+</form>
+</body>
+<!--108
+216
+325
+435
+540
+600-->

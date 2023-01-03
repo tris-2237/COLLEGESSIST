@@ -1,0 +1,188 @@
+<html>
+<head>
+<title>Welcome Page</title>
+<style>
+
+body {
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#up {
+  background-color:  black;
+  width: 100%;
+  height: 10%;
+  border: 1px solid black;
+  padding: 0px;
+  
+  margin: 0px;
+  
+  
+}
+
+
+
+
+#top {
+  background-image: url("{{url_for('static',filename='welcome_bg.jpg')}}");
+   background-repeat: no-repeat;
+   <!--background-attachment: fixed;-->
+   -o-background-size: 100% 100%;
+   -moz-background-size: 100% 100%;
+   -webkit-background-size: 100% 100%;
+  width: 100%;
+  height: 90%;
+  border: 0px solid black;
+  padding: 0px;
+  
+  margin: 0px;
+  
+  
+}
+
+
+
+
+  
+  
+  
+  #quote {
+  background-color:  black;
+  width: 50%;
+  color: white;
+  height: 100%;
+  border: 0px solid white;
+ 
+ } 
+  
+  
+  
+  .border{
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+
+
+#main {
+  background-color:  ;
+  width: 40%;
+  height: 100px;
+  border: 0px solid black;
+  position: fixed;
+  left: 470px;
+  top: 350px;
+  display: flex;
+  align-items: flex-start;
+  
+ } 
+  
+  
+  #name {
+  align-self: center;
+  
+ }
+  
+  
+  #button {
+
+    font-size: 20px;
+    color: black;
+    background: #e69600;
+    border: 0px solid rgb(37, 34, 34);
+    
+    border-radius: 50px ;
+    -moz-border-radius: 18px ;
+    display:inline-block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 60px;
+    width: 225px;
+    
+ }
+
+
+
+
+  
+
+
+</style>
+</head>
+
+
+
+
+
+
+
+
+<body>
+<div id='up'>
+
+
+<div style="margin:0 auto" align=center>
+
+<div id='quote'>
+
+<p align='justify'>
+<font face='Quicksand' size=5 style="font-weight: 500;">
+<font size=7><b>&lsquo;</font></b>And, when you want something, all the
+ universe conspires in  helping you to achieve it.<font size=7><b>&rsquo;</font></b>
+<br>
+</p>
+<i>&#8211; Paulo Coelho, The Alchemist</i>
+
+
+
+
+
+</div>
+</div>
+</div>
+
+
+<div id='top'>
+
+
+
+<div id='main'>
+<nobr><img class='border' src="{{url_for('static',filename='logo.jpg')}}" height=100 width=100>&nbsp&nbsp
+<div id=name>
+<font color ="#000000" size =7 face ="impact" style="font-size:45pt"><b>COLLEGESSIST</b></FONT>
+</nobr>
+<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font face='Aspergit'><i>~Colleges You Love 3000</i></font>
+
+</div>
+</div>
+
+<br><br><br><br>
+<form action='/loginpagenew.html'>
+
+<input type="submit" value="Let&#39s Explore !" id="button" style="position:fixed;bottom:250;left:605;">
+  
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+</body>
+</html>

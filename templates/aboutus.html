@@ -1,0 +1,267 @@
+<html>
+<head><title>About Us</title>
+<style>
+
+body {
+  margin: 5px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+#main {
+  background-color: #ffc14d ;
+  width: 1422px;
+  height: 100px;
+  border: 0px solid black;
+  display: flex;
+  align-items: flex-start;
+
+}
+
+#infobox    {
+     background-color: ;
+     width: 65%;
+     min-height: 90vh;
+     margin: 1px;
+     border: 2px solid white;
+     padding: 25px 30px;
+     
+     box-sizing: border-box;
+
+     }
+
+
+
+#name {
+  align-self: center;
+}
+
+
+
+ul {
+  width: 1422px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+<!--li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}-->
+
+
+
+
+
+li a, .dropbtn {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn :hover:not(.active) {
+  background-color: #555;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #ffc14d;}
+
+.dropdown-contentadmin a:hover {background-color: #ff3333;}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+li a.active {
+  background-color: #ffc14d;
+  color: black;
+  border: 1px solid black;
+
+}
+
+li a.admin {
+  background-color: red;
+  color: black;
+
+}
+
+li a.stick {
+  <!--background-color: #ffc14d;-->
+  color: white;
+
+}
+
+
+
+
+#middle {
+  text-align: center;
+  margin: 15px;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+
+
+
+
+<body background ="{{url_for('static',filename='about.jpg')}}" style=" background-size: 1450px 1080px;">
+
+<div id='main'>
+<nobr><img src="{{url_for('static',filename='logo.jpg')}}" height=100 width=100>&nbsp&nbsp
+<div id=name>
+<font color ="#000000" size =7 face ="Impact"><b>COLLEGESSIST</b></FONT>
+</nobr>
+<!---<h3><i>~Colleges You Love 3000</i></h3>-->
+</div>
+</div>
+</div>
+
+
+
+<ul>
+  <li><a href="/homepg.html">Home</a></li>
+  <li><a href="/apt.html">Aptitude</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Colleges</a>
+    <div class="dropdown-content">
+      <a href="/all_colleges.html">All Colleges</a>
+      <a href="/filter_search">Search By Filter</a>
+    </div>
+  </li>
+  <li><a href="updates">Updates</a></li>
+  <li><a href="/help">Help</a></li>
+  <li><a class='active' href="/about">About Us</a></li>
+  <li class="admin dropdown" style="visibility: {{v}};"><a href="javascript:void(0)" class="admin dropbtn" style="visibility: {{v}};">Admin</a>
+   <div class="dropdown-content dropdown-contentadmin ">
+      <a href="admin_add">Add a College</a>
+      <a href="/admin_update">Update a College</a>
+       <a href="/admin_delete">Delete a College</a>
+
+    </div>
+    </li>
+  <li style="float:right"><a class="stick" href="loginpagenew.html">Sign Out</a></li>
+  <li style="float:right" id='middle'>Welcome,{{username_1}}        </li>
+  
+  
+</ul>
+
+/*About Us*/
+
+<div style="margin:0 auto" align=center>
+<div id="infobox">
+
+
+<font color=white face='Algerian' size=7><h2>
+<center>ABOUT US</center>
+</h2></font>
+
+<font color=white face='Quicksand' size=6>
+<p align='justify'>
+
+<i><b>COLLEGESSIST</i></b> was created to make the tedious job of searching through various colleges 
+easier.
+This site provides an interactive platform  for students to make well-thought
+choices in life. The group of designers have handpicked some of the most essential 
+details about the colleges, thereby making it easier to compare and select a future 
+college for any aspiring student.With all colleges under one roof, it&#39;s high-time 
+you welcome hassle-free college finding. So now that you have this information at your
+fingertips, sit back, relax and search for your dream college from the comforts of your
+home! 
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+	
+
+
+</body>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

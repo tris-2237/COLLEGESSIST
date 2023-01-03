@@ -1,0 +1,51 @@
+
+{% extends "apt_base.html" %}
+{% block content %}
+<progress max="600" value="216" ></progress>
+
+<br><br><br>
+
+<form action="/aptq_3" method="post" id="stream">
+<div style="margin:0 auto" align=center>
+<font  face="Aspergit">
+<p><h1>3)	Now, let&#39;s talk about size:	  </p></h1>
+</font>
+
+<!--
+<input type="checkbox" id="size1" name="size"  value="big" checked>
+<label for="size1">Big</label><br>
+<input type="checkbox" id="size2" name="size"  value="small" checked>
+<label for="size2">Small</label>
+
+-->
+
+
+<font color='white' face="Aspergit">
+<label class="container"><br>Big
+  <input type="checkbox" type="checkbox" id="size1" name="size"  value="big" >
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"><br>Small
+  <input type="checkbox" id="size2" name="size"  value="small">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+
+
+</font>
+
+<font face='Aspergit'>
+
+<p align='right'><font face='Aspergit'><b><input type="submit" value= "Next Question" id='nq' style= "color:black;
+    font: 1em/1.25em Aspergit, Helvetica, sans-serif; font-weight: bold;"></b></font></input></p>
+{% endblock %}
+
+<!--108
+216
+325
+435
+540
+600-->

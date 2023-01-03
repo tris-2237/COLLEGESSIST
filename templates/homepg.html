@@ -1,0 +1,281 @@
+<html>
+<head><title>Home Page</title>
+<style>
+
+
+
+
+
+#main {
+  background-color: #ffc14d ;
+  width: 100%;
+  height: 100px;
+  border: 1px solid black;
+  display: flex;
+  align-items: flex-start;
+
+}
+
+
+.box{
+  position: fixed;
+  top: 175;
+  left: 300;
+  background-color: black;
+  border: 5px solid black;
+  width: 550px;
+  color: white;
+  padding: 70px;
+  text-align: center;
+  margin: 5px;
+}
+
+
+
+
+
+
+
+
+#name {
+  align-self: center;
+}
+
+
+
+ul {
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+<!--li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}-->
+
+
+
+
+
+li a, .dropbtn {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn :hover:not(.active) {
+  background-color: #555;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color:  #ffc14d ;}
+
+.dropdown-contentadmin a:hover {background-color:  #ff3333 ;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+li a.active {
+  background-color: #ffc14d;
+  color: black;
+
+}
+
+li a.admin {
+  background-color: red;
+  color: black;
+
+}
+
+
+li a.stick {
+  <!--background-color: #ffc14d;-->
+  color: white;
+
+}
+
+#button {
+
+    font-size: 20px;
+    color: black;
+    background: #ffa700;
+    border: 2px solid rgb(37, 34, 34);
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 60px;
+    width: 100px;
+ }
+
+
+#middle {
+  text-align: center;
+  margin: 15px;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+
+
+
+
+<body background ="{{url_for('static',filename='bg5.jpg')}}">
+
+<div id='main'>
+<nobr><img src="{{url_for('static',filename='logo.jpg')}}" height=100 width=100>&nbsp&nbsp
+<div id=name>
+<font color ="#000000" size =7 face ="Impact"><b>COLLEGESSIST</b></FONT>
+</nobr>
+<!---<h3><i>~Colleges You Love 3000</i></h3>-->
+</div>
+</div>
+</div>
+
+
+
+
+<ul>
+  <li><a class='active' href="#home">Home</a></li>
+  <li><a href="/apt.html">Aptitude</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Colleges</a>
+    <div class="dropdown-content">
+      <a href="all_colleges.html">All Colleges</a>
+      <a href="/filter_search">Search By Filter</a>
+    </div>
+  </li>
+  <li><a href="updates">Updates</a></li>
+  <li><a href="/help">Help</a></li>
+  <li><a href="/about">About Us</a></li>
+  <li class="admin dropdown" style="visibility: {{v}};"><a href="javascript:void(0)" class="admin dropbtn" style="visibility: {{v}};">Admin</a>
+   <div class="dropdown-contentadmin dropdown-content">
+      <a href="admin_add">Add a College</a>
+      <a href="/admin_update">Update a College</a>
+       <a href="/admin_delete">Delete a College</a>
+
+    </div>
+    </li><!--hidden/inherit-->
+  <li style="float:right"><a class="stick" href="loginpagenew.html">Sign Out</a></li><!---->
+  <li style="float:right" id='middle'>Welcome, {{username_1}}</li>
+  
+  
+</ul>
+
+
+<div style="margin:0 auto" align=center>
+<div class="box">
+
+<h2 face="Times New Roman">
+
+<br> 
+<form action="/search_col" method="POST" autocomplete="off">
+  <label for="search"><h2><font face=''>&nbsp&nbsp&nbsp&nbsp&nbsp<b>Search for <BR> &nbsp&nbsp&nbsp&nbspYOUR Dream College Here</b></FACE></h2></label> <!--method,action as attributes-->
+  <div style="width:570px; margin:0 auto;">
+    <input type="text" id="search" name="searchc" placeholder="Search By College Name" style="font-size:18pt;height:100px;width:600px;">    
+    </div>
+{% with messages=get_flashed_messages() %}
+    {% if messages %}
+      {% for msg in messages %}
+        <font color="red"  style="font-size:15pt;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp*{{msg}}</font>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  
+  <br>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <input type="submit" value="Go!" id="button">
+  
+</form>
+
+
+
+</div>
+</div>
+
+
+	
+
+
+</body>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

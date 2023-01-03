@@ -1,0 +1,50 @@
+
+{% extends "apt_base.html" %}
+{% block content %}
+<progress max="600" value="325" ></progress>
+
+<br><br><br>
+
+<form action="/aptq_4" method="post" id="stream">
+<div style="margin:0 auto" align=center>
+<font  face="Aspergit">
+<p><h1>4)	Moving on to hostels&#46; &#46; &#46; &#46;    </p></h1>
+</font>
+
+
+
+
+<font color='white' face="Aspergit">
+<label class="container"><br>Private Rooms
+  <input type="checkbox" id="hostel1" name="hostel"  value="Private" >
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"><br>Shared Rooms
+  <input type="checkbox"  id="hostel2" name="hostel"  value="Shared"  >
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"><br>None
+  <input type="checkbox" id="hostel3" name="hostel"  value="Not" >
+  <span class="checkmark"></span>
+</label>
+<br>
+
+
+</font>
+
+<font face='Aspergit'>
+
+<p align='right'><font face='Aspergit'><b><input type="submit" value= "Next Question" id='nq' style= "color:black;
+    font: 1em/1.25em Aspergit, Helvetica, sans-serif; font-weight: bold;"></b></font></input></p>
+{% endblock %}
+
+<!--108
+216
+325
+435
+540
+600-->

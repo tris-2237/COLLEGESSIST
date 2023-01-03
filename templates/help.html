@@ -1,0 +1,408 @@
+<html>
+<head><title>Help</title>
+<style>
+
+<!--body {
+  margin: 5px;
+  padding: 0;
+  box-sizing: border-box;
+}-->
+
+
+
+
+#main {
+  background-color: #ffc14d ;
+  width: 1422px;
+  height: 100px;
+  border: 0px solid black;
+  display: flex;
+  align-items: flex-start;
+
+}
+
+#infobox    {
+     background-color: white ;
+     width: 85%;
+     min-height: 250vh;
+     margin: 1px;
+     border: 2px solid black;
+     padding: 10px 20px;
+     color: black;
+     border-radius: 30px;
+     
+     
+     
+    
+
+     }
+
+
+
+#name {
+  align-self: center;
+}
+
+
+
+ul.bar {
+  width: 1422px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+<!--li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}-->
+
+
+
+
+
+li a, .dropbtn {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn :hover:not(.active) {
+  background-color: #555;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #ffc14d;}
+
+.dropdown-contentadmin a:hover {background-color: #ff3333;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+li a.active {
+  background-color: #ffc14d;
+  color: black;
+  border: 1px solid black;
+
+}
+
+li a.admin {
+  background-color: red;
+  color: black;
+
+}
+
+li a.stick {
+  <!--background-color: #ffc14d;-->
+  color: white;
+
+}
+
+
+
+
+#middle {
+  text-align: center;
+  margin: 15px;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+
+
+
+
+<body background="{{url_for('static',filename='help.png')}}" > <!--style=" background-size: 1450px 2000px;"-->
+
+<div id='main'>
+<nobr><img src="{{url_for('static',filename='logo.jpg')}}"  height=100 width=100>&nbsp&nbsp
+<div id=name>
+<font color ="#000000" size =7 face ="Impact"><b>COLLEGESSIST</b></FONT>
+</nobr>
+<!---<h3><i>~Colleges You Love 3000</i></h3>-->
+</div>
+</div>
+</div>
+
+
+
+<ul class='bar'>
+  <li><a href="/homepg.html">Home</a></li>
+  <li><a href="/apt.html">Aptitude</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Colleges</a>
+    <div class="dropdown-content">
+      <a href="/all_colleges.html">All Colleges</a>
+      <a href="/filter_search">Search By Filter</a>
+    </div>
+  </li>
+  <li><a href="updates">Updates</a></li>
+  <li><a class='active' href="/help">Help</a></li>
+  <li><a href="/about">About Us</a></li>
+  <li class="admin dropdown" style="visibility: {{v}};"><a href="javascript:void(0)" class="admin dropbtn" style="visibility: {{v}};">Admin</a>
+   <div class="dropdown-content dropdown-contentadmin">
+      <a href="admin_add">Add a College</a>
+      <a href="/admin_update">Update a College</a>
+       <a href="/admin_delete">Delete a College</a>
+
+    </div>
+    </li>
+  <li style="float:right"><a class="stick" href="loginpagenew.html">Sign Out</a></li>
+  <li style="float:right" id='middle'>Welcome,{{username_1}}       </li>
+  
+  
+</ul>
+
+
+
+<!--Help-->
+
+
+<br><br>
+<div id="infobox" style="margin:0 auto" align=center>
+
+
+
+<font face='Algerian' size=7><h2>
+<center><u>HELP</u></center>
+</h2></font>
+
+
+
+<font face='Algerian' size=7><h3 align=left>
+  <b>>></b> HOME TAB
+</h3></font>
+
+
+<font face='Quicksand' size=5>
+
+
+<p align=left><font size=6>	</p>
+The home page has the following options:
+</font>
+
+<br><br><br>
+
+<img src="{{url_for('static',filename='menubar.png')}}" height=100px width=1200px border=1 alt='menubar.png'>
+
+<br><br>
+
+
+--	Home page is where you can take a short quiz <b>(Aptitude)</b>, access all the 
+colleges and their information and search for your desired college.<br>
+
+--	The aptitude button takes you to the aptitude page.<br>
+(See <b>(Aptitude)</b> for more 
+information on the same)<br><br>
+
+--	The colleges tab has two options:<br>
+
+	><b>All colleges</b> (displays all the colleges present)<br>
+	><b>Filter by college(</b>eliminate colleges that don&#39;t fall under your preference 
+	category-by-category)<br><br>
+
+
+--<b>Updates</b> shows recently updated information about the site.<br>
+--	<b>About Us</b> displays information about the website and its aim.<br>
+--<b>Sign Out</b> lets you sign out of the website.<br>
+--	The search bar provides a method to search for colleges by their name.<br>
+
+
+
+
+<br>
+
+<font face='Algerian' size=7><h3 align=left>
+ <b>>></b> Search Bar
+</h3></font>
+<p align=left>
+
+--Type the name of a college in the given search bar and click <i>Go!</i>.<br>
+--If the college is available, it will pop up, and you can view it by clicking 
+<i>View More.</i> <br>
+
+--If it is not available, either related searches pop up and you can click.
+<i>View More </i> to view them or it will display<i> No Colleges Found.</i><br>
+
+--In the second case, try and check the spelling of the college or try finding your 
+college in the all colleges tab (mentioned above).<br>
+
+
+
+
+
+
+
+<br>
+
+<font face='Algerian' size=7><h3 align='left'>
+<b>>></b> APTITUDE TAB
+</h3></font>
+<p align=left>
+--You can take the aptitude quiz given in the page by selecting the desired check boxes
+of the given options.<br>
+--Then the site will take you to a page with the list of some of the colleges that
+correspond to your preference in the quiz.<br>
+--Click the desired college from the displayed list to view information about a college.<br>
+
+
+</p>
+
+
+
+
+
+<font face='Algerian' size=7><h3 align=left>
+<b>>></b> COLLEGES TAB
+</h3></font>
+
+
+<p align=left>
+--<b>All Colleges</b>
+<br>>Choose a college to view from the displayed colleges by clicking the <i>View More </i> link.
+<br><br>
+
+--<b>Filter By College</b>
+<br>>Click on the given dropdown boxes and select your preference from the given options.
+Once your done click the <i>Go!</i> button.<br>
+>A list of colleges corresponding to your preference pops up.<br>
+>Choose a college to view from the displayed colleges by clicking the <i>View More </i> link.<br>
+
+</p>
+
+
+
+
+
+
+<br>
+<font face='Algerian' size=7><h3 align=center>
+  <b>>></b> Help Tab
+</h3></font>
+
+
+
+&nbsp&nbsp&nbsp&nbsp You&#39;re right here!
+
+</p>
+</font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+	
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
