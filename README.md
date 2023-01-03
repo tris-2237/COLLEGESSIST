@@ -1,5 +1,7 @@
 # COLLEGESSIST
 A College Finding Website
+
+
 Collegessist was created to make the tedious job of searching 
 through various colleges easier. This site provides an 
 intermediate between the student and their various choice of 
